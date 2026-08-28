@@ -5,6 +5,21 @@
 }
 
 
+.contacto-icono{
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+.logo-footer{
+    width: 150px;
+    height: auto;
+}
+
+.footer-content{
+    margin: 10px;
+}
+
 .card-titulo{
     text-align: center;
     margin-top: 10px;
@@ -28,7 +43,16 @@
     padding: 15px;
     border-radius: 10px;
 }
+.titulo{
+    line-height: 40px;
+margin-block-end: 20px;
+margin-block-start: 0px;
+margin-bottom: 20px;
+margin-inline-end:0px;
+margin-inline-start:0px;
+margin-top: 0px;
 
+}
 .barra-navegacion a {
     text-decoration: none;
     color: black;
@@ -38,6 +62,12 @@
 
 }
 
+.logo-header{
+    white-space-collapse: collapse;
+    vertical-align: middle;
+    
+}
+
 .articulos{
     margin-top: 50px;
     display: flex;
@@ -45,7 +75,6 @@
     align-items: flex-start;
     margin: 15px;
     padding: 10px;
-
 }
 
 .art{
@@ -59,6 +88,154 @@
     max-width: 100%;
     height: auto;
     margin-bottom: 10px;
+}
+
+
+
+/* Nuevos estilos generales y variables de tema */
+:root{
+    --bg: #fbf7f2; /* fondo claro y cálido */
+    --card: #ffffff;
+    --accent: #8a4b3a; /* color principal (marrón/terracota) */
+    --muted: #7a6b5d;
+    --shadow: rgba(33,33,33,0.08);
+}
+
+body{
+    font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: var(--bg);
+    color: #222;
+    line-height: 1.45;
+    -webkit-font-smoothing:antialiased;
+}
+
+/* Contenedor central opcional */
+main, .container{
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+/* Encabezado */
+header{
+    padding: 28px 0 8px;
+    text-align: center;
+}
+.logo-header{
+    width: 90px;
+    height: auto;
+    display: block;
+    margin: 0 auto 10px;
+}
+.card-titulo{
+    font-size: 42px;
+    letter-spacing: 1px;
+    color: var(--accent);
+}
+.card-parrafo-titulo{
+    color: var(--muted);
+    max-width: 800px;
+    margin: 12px auto 0;
+}
+
+/* Navegación */
+.barra-navegacion{
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    background-color: rgba(231,205,166,0.9);
+    padding: 10px 18px;
+    border-radius: 999px;
+    width: fit-content;
+}
+.barra-navegacion a{
+    text-decoration: none;
+    color: #111;
+    font-weight: 600;
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: background-color 180ms ease, transform 180ms ease;
+}
+.barra-navegacion a:hover{
+    background-color: rgba(255,255,255,0.6);
+    transform: translateY(-2px);
+}
+
+/* Sección de productos: usar grid para tarjetas flexibles */
+.articulos{
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.art{
+    background: var(--card);
+    border-radius: 12px;
+    padding: 16px;
+    text-align: center;
+    box-shadow: 0 6px 18px var(--shadow);
+    transition: transform 220ms ease, box-shadow 220ms ease;
+}
+.art:hover{
+    transform: translateY(-6px) scale(1.01);
+    box-shadow: 0 14px 30px rgba(0,0,0,0.12);
+}
+
+.art img{
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin: 0 auto 12px;
+}
+
+.art h2{
+    font-size: 18px;
+    color: var(--accent);
+    margin-bottom: 6px;
+}
+.art p{
+    color: var(--muted);
+    font-size: 14px;
+}
+
+/* Footer */
+footer{
+    margin-top: 36px;
+    background: linear-gradient(180deg, rgba(0,0,0,0.03), transparent);
+    padding: 22px 10px;
+}
+.footer-content{
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.footer-content p{
+    font-size: 14px;
+    color: var(--muted);
+}
+
+.logo-perfume{
+    text-align: center;
+    margin-top: 12px;
+}
+
+/* Responsividad */
+@media (max-width: 720px){
+    .card-titulo{font-size: 30px}
+    .barra-navegacion{flex-direction: row; gap: 8px; padding: 8px}
+    .art img{width: 140px; height: 140px}
+    .footer-content{flex-direction:column; align-items:flex-start}
+}
+
+@media (max-width: 420px){
+    .card-titulo{font-size: 26px}
+    .barra-navegacion{flex-wrap:wrap}
 }
 
 
